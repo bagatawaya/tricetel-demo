@@ -1,0 +1,1 @@
+export default function Help(){ return <div><h1>Help Center</h1><p>Guides, docs, troubleshooting.</p></div>; }

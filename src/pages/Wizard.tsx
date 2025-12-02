@@ -1,0 +1,1 @@
+export default function Wizard(){ return <div><h1>Agent Setup Wizard</h1><p>Step‑by‑step agent creation flow.</p></div>; }
