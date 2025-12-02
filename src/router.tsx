@@ -1,26 +1,22 @@
-import React, { useState } from 'react';
-import Dashboard from './pages/Dashboard';
-import Wizard from './pages/Wizard';
-import Help from './pages/Help';
+import { createBrowserRouter } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import Wizard from "./pages/Wizard";
+import Help from "./pages/Help";
+import Logs from "./pages/Logs";
+import Numbers from "./pages/Numbers";
+import Settings from "./pages/Settings";
+import Sip from "./pages/Sip";
+import Templates from "./pages/Templates";
 
-export default function Router() {
-  const [page, setPage] = useState('dashboard');
+const router = createBrowserRouter([
+  { path: "/", element: <Dashboard /> },
+  { path: "/wizard", element: <Wizard /> },
+  { path: "/help", element: <Help /> },
+  { path: "/logs", element: <Logs /> },
+  { path: "/numbers", element: <Numbers /> },
+  { path: "/settings", element: <Settings /> },
+  { path: "/sip", element: <Sip /> },
+  { path: "/templates", element: <Templates /> },
+]);
 
-  const PAGES: Record<string, JSX.Element> = {
-    dashboard: <Dashboard />,
-    wizard: <Wizard />,
-    help: <Help />,
-  };
-
-  return (
-    <div>
-      <nav>
-        <button onClick={() => setPage('dashboard')}>Dashboard</button>
-        <button onClick={() => setPage('wizard')}>Wizard</button>
-        <button onClick={() => setPage('help')}>Help</button>
-      </nav>
-
-      <div>{PAGES[page]}</div>
-    </div>
-  );
-}
+export default router;
